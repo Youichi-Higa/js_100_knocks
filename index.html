@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>
+      dayjs().format();
+    </script>
+
+    <script>
+      //   // 01_数の比較
+      //   function compareNumbers(a, b) {
+      //       if (a > b) {
+      //           return a;
+      //       } else if (a < b) {
+      //           return b;
+      //       } else {
+      //           return "eq";
+      //       }
+      //   }
+
+      //   console.log(compareNumbers(2, 5)); // 5
+      //   console.log(compareNumbers(10, 9)); // 10
+      //   console.log(compareNumbers(2, 2)); // eq
+
+      //   // 02_単位の計算;
+      //   function convertToMm(n, s) {
+      //     if (s == "km") {
+      //       return n * 1000 * 100 * 10;
+      //     } else if (s == "m") {
+      //       return n * 100 * 10;
+      //     } else if (s == "cm") {
+      //       return n * 10;
+      //     } else {
+      //       return "error";
+      //     }
+      //   }
+
+      // // 橋口さんのやつ
+      // function convertToMm(n, s) {
+      //   const obj = { km: 1000000, m: 1000, cm: 10 };
+      //   return n * obj[s];
+      // }
+
+      // console.log(convertToMm(1, "km")); // 1000000
+      // console.log(convertToMm(54, "km")); // 54000000
+      // console.log(convertToMm(5, "m")); // 5000
+      // console.log(convertToMm(2, "cm")); // 20
+
+      // // 03_奇数か偶数か
+      //   function oddOrEven(n) {
+      //     if (n % 2 != 0) {
+      //       return "odd";
+      //     } else {
+      //       return "even";
+      //     }
+      //   }
+
+      // // たろ先生のやつ
+      // function oddOrEven(n) {
+      //   return ["even", "odd"][n % 2];
+      // }
+
+      // console.log(oddOrEven(4)); // even
+      // console.log(oddOrEven(5)); // odd
+      // console.log(oddOrEven(2)); // even
+
+      // // 04_西暦の計算
+      // function calculateYears(a, b) {
+      //   return b - a;
+      // }
+
+      //   console.log(calculateYears(1990, 2014)); // 24
+      //   console.log(calculateYears(1999, 2000)); // 1
+      //   console.log(calculateYears(794, 1192)); // 398
+
+      // // 05_何番目？
+      //   function judgeTh(c) {
+      //   const data =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+      //   return data.indexOf(c)+1
+      //     }
+
+      // // 松尾さんのやつ
+      // function judgeTh(c) {
+      //   const str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      //   return str.indexOf(c) + 1;
+      // }
+      // console.log(judgeTh("C")); // 3
+      // console.log(judgeTh("X")); // 24
+
+      // // 06_絶対値
+      // 自分で考えたやつ
+      // function getAbs(n) {
+      //   if (n >= 0) {
+      //     return n;
+      //   } else {
+      //     return -n;
+      //   }
+      // }
+
+      // // 絶対値の関数(石橋さん)
+      // function getAbs(n) {
+      //   return Math.abs(n);
+      // }
+
+      // console.log(getAbs(-10)); // 10
+      // console.log(getAbs(15)); // 15
+      // console.log(getAbs(0)); // 0
+
+      // // 07_割り算
+      // 自分が考えたもの
+      //   function getQuotientAndSurplus(m, n) {
+      //     return Math.floor(m / n) + " " + (m % n);
+      //   }
+
+      // // 安倍さんのやつ
+      // function getQuotientAndSurplus(m, n) {
+      //   const f = parseInt(m / n);
+      //   const l = parseInt(m % n);
+      //   return `${f} ${l}`;
+      // }
+
+      // console.log(getQuotientAndSurplus(10, 3)); // 3 1
+      // console.log(getQuotientAndSurplus(12, 14)); // 0 12
+
+      //   // 08_小文字を大文字に
+      //   function convertToUppercase(s) {
+      //     return s.toUpperCase();
+      //   }
+
+      // // 若松さんのやつ
+      // function convertToUppercase(s) {
+      //     S = (s).split('');
+      //     let array = new Array;
+      //     abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o,", "p ", "q ", "r", "s", "t",
+      //       "u", "v", "w", "x", "y", "z"
+      //     ]
+      //     ABC = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
+      //       "V", "W", "X", "Y", "Z"
+      //     ]
+      //     for (i = 0; i < S.length; i++) {
+      //       for (j = 0; j < abc.length; j++) {
+      //         if (S[i] == abc[j]) {
+      //           array.push(ABC[j])
+      //         }
+      //       }
+      //     }
+      //     return array.join("");
+      //   }
+
+      //         console.log(convertToUppercase("gsacademy")); // GSACADEMY
+      //         console.log(convertToUppercase("abcdefghijklmnopqrstuvwxyz")); // ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+      //   // 09_掛け算のリスト;
+      //   最初にやったやつ
+      //   function createList(n) {
+      //     return n+" "+n * 2+" "+n * 3+" "+n * 4+" "+n * 5+" "+n * 6+" "+n * 7+" "+n * 8+" "+n * 9;
+      //   }
+
+      // // 繰り返し処理(他の人の参考に)
+      // function createList(n) {
+      // let array = [];
+      // for (let i = 0; i < 9; i++) {
+      //   array.push(n * i);
+      // }
+      // ans = array.join(" ");
+      // return ans;
+      // }
+
+      // // 安倍さんのやつ
+      // function createList(n) {
+      //   let num = "";
+      //   for (let i = 1; i <= 9; i++) {
+      //     num += String(`${i * n} `);
+      //   }
+      //   return num;
+      // }
+
+      // console.log(createList(2)); // 2 4 6 8 10 12 14 16 18
+      // console.log(createList(3)); // 3 6 9 12 15 18 21 24 27
+      // console.log(createList(5)); // 5 10 15 20 25 30 35 40 45
+
+      //   // 10_等差数列
+      //   function createSequence(m, n) {
+      //     let array = [];
+      //     for (let i = 0; i < 10; i++) {
+      //       array.push(m + n * i);
+      //     }
+      //     ans = array.join(" ");
+      //     return ans;
+      //   }
+
+      //   console.log(createSequence(3, 3)); // 3 6 9 12 15 18 21 24 27 30
+      //   console.log(createSequence(5, 10)); // 5 15 25 35 45 55 65 75 85 95
+      //   console.log(createSequence(1, 3)); // 1 4 7 10 13 16 19 22 25 28
+
+      // // 11_カウントダウン(自分で作ったやつ)
+      // function countDown(n) {
+      //   let array = [];
+      //   let num = n;
+      //   for (let i = 0; i < num; i++) {
+      //     array.push(n);
+      //     n--;
+      //   }
+      //   ans = array.join(" ");
+      //   return ans;
+      // }
+
+      // // 安倍さんのやつ
+      // function countDown(n) {
+      //   let line = "";
+      //   for (let i = 0; i < n; i++) {
+      //     line += String(`${n - i} `);
+      //   }
+      //   return line;
+      // }
+
+      // // 橋口さんのやつ
+      // function countDown(n) {
+      //   let count = n;
+      //   const array = [];
+      //   while (count > 0) {
+      //     array.push(count);
+      //     count--;
+      //   }
+      //   return array.join(" ");
+      // }
+
+      // console.log(countDown(3)); // 3 2 1
+      // console.log(countDown(10)); // 10 9 8 7 6 5 4 3 2 1
+
+      // // 12_N文字目まで出力
+      // function getOneToN(s, n) {
+      //   return s.substr(0, n);
+      // }
+
+      // console.log(getOneToN("aabbccdd", 5)); // aabbc
+      // console.log(getOneToN("gsacademyfukuoka", 9)); // gsacademy
+
+      // // 13_最大と最小
+      // 安倍さんのやつ（スプレッド構文）
+      // function getMaxAndMin(s) {
+      //   const n = s.split(" ");
+      //   const t = Math.max(...n);
+      //   const b = Math.min(...n);
+      //   return `${t} ${b}`;
+      // }
+
+      // //角田さんのやつ
+      // function getMaxAndMin(s) {
+      //   ary = s.split(" ");
+      //   let number = [];
+      //   for (let i = 0; i < ary.length; i++) {
+      //     number.push(Number(ary[i]));
+      //   }
+      //   const max = Math.max.apply(null, number);
+      //   const min = Math.min.apply(null, number);
+      //   return max + " " + min;
+      // }
+
+      // console.log(getMaxAndMin("9 12 3 6 10")); // 12 3
+      // console.log(getMaxAndMin("1 1 2 2 3")); // 3 1
+      // console.log(getMaxAndMin("5 9 -1 10 2")); // 10 -1
+
+      // // 14_文字列からN番目
+      // function getNthChar(s, n) {
+      //   return s.substr(n - 1, 1);
+      // }
+
+      // 安倍さんのやつ
+      // function getNthChar(s, n) {
+      //   const s_spil = s.split("");
+      //   console.log(s_spil);
+      //   return s_spil[n - 1];
+      // }
+
+      // console.log(getNthChar("gsacademy", 3)); // a
+      // console.log(getNthChar("abcdefg", 5)); // e
+      // console.log(getNthChar("qwertyu", 1)); // q
+
+      // // 15_文字列の一致
+      // function isEqual(s, t) {
+      //   if (s == t) {
+      //     return "Yes";
+      //   } else {
+      //     return "No";
+      //   }
+      // }
+
+      // console.log(isEqual("gsacademy", "gsacademy")); // Yes
+      // console.log(isEqual("JavaScript", "ジャバスク")); // No
+      // console.log(isEqual("aaaaa", "aaaaaa")); // No
+
+      // // 16_Aの個数
+      // function getNumberOfA(s) {
+      //   const array = s.split("");
+      //   let count = 0;
+      //   for (let i = 0; i < array.length; i++) {
+      //     if (array[i] == "A") {
+      //       count++;
+      //     }
+      //   }
+      //   // なぜかforEachだとうまくいかない;
+      //   array.forEach(function (x) {
+      //     if (array[x] == "A") {
+      //       count++;
+      //     }
+      //   });
+      //   return count;
+      // }
+
+      // // 角田さんのやつ
+      // function getNumberOfA(s) {
+      //   str = s.split("");
+      //   let Aarray = str.filter((el) => el === "A");
+      //   return Aarray.length;
+      // }
+
+      // console.log(getNumberOfA("GSACADEMY")); // 2
+      // console.log(getNumberOfA("aAaAaA")); // 3
+      // console.log(getNumberOfA("JavaScript")); // 0
+
+      // // 17_表面積の計算
+      // function getSurfaceArea(a) {
+      //   return a * a * 6;
+      // }
+
+      // console.log(getSurfaceArea(4)); // 96
+      // console.log(getSurfaceArea(1)); // 6
+
+      // // 18_三角形の内角の和
+      // function getAngle(a, b) {
+      //   return 180 - a - b;
+      // }
+
+      // console.log(getAngle(30, 90)); // 60
+      // console.log(getAngle(45, 45)); // 90
+
+      // // 19_数字の出力
+      // function zeroPadding3(n) {
+      //   return ("000" + n).slice(-3);
+      // }
+
+      // console.log(zeroPadding3(98)); // 098
+      // console.log(zeroPadding3(2)); // 002
+
+      // 20_一週間の予定
+      // function getPaidHolidays(s) {
+      //   str = s.split(" ");
+      //   let array = str.filter((el) => el === "no");
+      //   return array.length;
+      // }
+
+      // function getPaidHolidays(s) {
+      //   const array = s.split(" ");
+      //   let count = 0;
+      //   for (let i = 0; i < array.length; i++) {
+      //     if (array[i] == "no") {
+      //       count++;
+      //     }
+      //   }
+      //   // なぜかforEachだとうまくいかない;
+      //   array.forEach(function (x) {
+      //     if (array[x] == "no") {
+      //       count++;
+      //       console.log(count);
+      //     }
+      //   });
+
+      //   return count;
+      // }
+
+      // console.log(getPaidHolidays("yes yes yes yes no no yes")); // 2
+      // console.log(getPaidHolidays("yes no no no no no yes")); // 5
+
+      // // 21_nまでの和
+      // function getSum(n) {
+      //   let add = 0;
+      //   for (let i = 0; i <= n; i++) {
+      //     add += i;
+      //   }
+      //   return add;
+      // }
+
+      // // 角田さんのやつ
+      // function getSum(n) {
+      //   return n * (n + 1) * 0.5;
+      // }
+
+      // console.log(getSum(10)); // 55
+      // console.log(getSum(99)); // 4950
+
+      // // 22_数字の桁数
+      // function getNumberOfDigits(n) {
+      //   return String(n).length;
+      // }
+
+      // console.log(getNumberOfDigits(100)); // 3
+      // console.log(getNumberOfDigits(114514)); // 6
+
+      // // 23_サイコロの裏面
+      // function getBackSide(n) {
+      //   return 7 - n;
+      // }
+
+      // console.log(getBackSide(1)); // 6
+      // console.log(getBackSide(3)); // 4
+
+      // // 24_単位の変換
+      // function convertToSeconds(n) {
+      //   return n * 60;
+      // }
+
+      // console.log(convertToSeconds(16)); // 960
+      // console.log(convertToSeconds(3)); // 180
+
+      // // 25_充電時間
+      // function getTimeUntilFull(n) {
+      //   return 100 - n;
+      // }
+
+      // console.log(getTimeUntilFull(70)); // 30
+      // console.log(getTimeUntilFull(25)); // 75
+
+      // // 26_頭文字
+      // function getInitialFromName(s) {
+      //   const array = s.split(" ");
+      //   // console.log(array);
+      //   // const f = array[0].substr(0, 1);
+      //   // const l = array[1].substr(0, 1);
+      //   // return `${f}.${l}`;
+      //   // 読みにくいけど、この下の１行でもいける
+      //   // return `${array[0].substr(0, 1)}.${array[1].substr(0, 1)}`;
+      // }
+
+      // // 安倍さんのやつ
+      // function getInitialFromName(s) {
+      //   const ss = s.split(" ");
+      //   const sss = ss[0].split("");
+      //   const sss2 = ss[1].split("");
+      //   return `${sss[0] + "." + sss2[0]}`;
+      // }
+
+      // console.log(getInitialFromName("Dio Brando")); // D.B
+      // console.log(getInitialFromName("Pannacotta Fugo")); // P.F
+      // console.log(getInitialFromName("Gyro Zeppeli")); // G.Z
+
+      // // 27_どれにしようかな
+      // function choiceOfGod(n) {
+      //   if (21 % n == 0) {
+      //     return n;
+      //   } else {
+      //     return 21 % n;
+      //   }
+      // }
+
+      // console.log(choiceOfGod(4)); // 1
+      // console.log(choiceOfGod(3)); // 3
+
+      // // 28_日付のデータ
+      // function formatYMD(s) {
+      //   const array = s.split(" ");
+      //   const Y = ("0000" + array[0]).slice(-4);
+      //   const M = ("00" + array[1]).slice(-2);
+      //   const D = ("00" + array[2]).slice(-2);
+      //   return `${Y}/${M}/${D}`;
+      // }
+
+      // console.log(formatYMD("2021 1 1")); // 2021/01/01
+      // console.log(formatYMD("2020 10 10")); // 2020/10/10
+      // console.log(formatYMD("794 11 29")); // 0794/11/29
+
+      // // 29_アットマーク
+      // function convertAtToAtMark(s) {
+      //   return s.replaceAll("at", "@");
+      // }
+
+      // console.log(convertAtToAtMark("gsatcodeatquantity")); // gs@code@quantity
+      // console.log(convertAtToAtMark("atatatjojoatatat")); // @@@jojo@@@
+
+      // 30_花粉症でつらい
+      // function getNeedBox(m, n) {
+      //   return Math.ceil(n / m);
+      // }
+
+      // console.log(getNeedBox(7, 30)); // 5
+      // console.log(getNeedBox(3, 100)); // 34
+      // console.log(getNeedBox(7, 5)); // 1
+
+      // // 31_本棚選び
+      // function canStoreBooks(s) {
+      //   array = s.split(" ");
+      //   if (array[0] <= array[1] * array[2]) {
+      //     return "OK";
+      //   } else {
+      //     return "NG";
+      //   }
+      // }
+
+      // console.log(canStoreBooks("400 5 85")); // OK
+      // console.log(canStoreBooks("500 4 70")); // NG
+
+      // // 32_試合の回数
+      // function calculateNumberOfGames(n) {
+      //   let add = 0;
+      //   for (let i = 0; i < n; i++) {
+      //     add += i;
+      //   }
+      //   return add;
+      // }
+
+      // console.log(calculateNumberOfGames(4)); // 6
+      // console.log(calculateNumberOfGames(10)); // 45
+
+      // 33_連休の天気
+      // function daysOfGoOut(s) {
+      //   const array = s.split(" ");
+      //   const under30array = array.filter((el) => el <= 30);
+      //   return under30array.length;
+      // }
+      // console.log(daysOfGoOut("13 0 15 30 89 100 30")); // 5
+      // console.log(daysOfGoOut("0 14 18 22 0 2 4")); // 7
+      // console.log(daysOfGoOut("99 99 99 99 99 99 99")); // 0
+
+      // 34_正三角形かどうか
+      // function isEquilateralTriangle(s) {
+      //   array = s.split(" ");
+      //   const num = array.map(Number);
+      //   console.log(array);
+      //   if (array[0] == array[1] && array[1] == array[2]) {
+      //     return "yes";
+      //   } else {
+      //     return "No";
+      //   }
+
+      //   // 安倍さんのやつ
+      //   const results = s.split(" ");
+      //   if (results.length > 3) {
+      //     return "そもそも３角形じゃないし！";
+      //   } else {
+      //     const result = results.every((v) => v == results[0]);
+      //     return result ? "yes" : "no";
+      //   }
+      // }
+
+      // console.log(isEquilateralTriangle("10 10 10")); // yes
+      // console.log(isEquilateralTriangle("3 4 5")); // No
+
+      // // 35_天気の表示
+      // function showWeather(n) {
+      //   if (0 <= n && n <= 30) {
+      //     return "sunny";
+      //   } else if (31 <= n && n <= 70) {
+      //     return "cloudy";
+      //   } else if (71 <= n) {
+      //     return "rainy";
+      //   }
+      // }
+
+      // console.log(showWeather(31)); // cloudy
+      // console.log(showWeather(2)); // sunny
+      // console.log(showWeather(71)); // rainy
+
+      // // 36_はじめまして
+      // function greet(s1, s2) {
+      //   const obj = { M: "Hi, Mr.", F: "Hi, Ms." };
+      //   // return [s2]obj + s1;
+      //   return `${obj[s2]}${s1}`;
+      // }
+
+      // console.log(greet("Stroheim", "M")); // Hi, Mr.Stroheim
+      // console.log(greet("Trish", "F")); // Hi, Ms.Trish
+
+      // // 37_通知表
+      // function convertNumberToAlphabet(s) {
+      //   return s
+      //     .replace(/5/g, "A")
+      //     .replace(/4/g, "B")
+      //     .replace(/3/g, "C")
+      //     .replace(/2/g, "D")
+      //     .replace(/1/g, "E");
+      // }
+
+      // console.log(convertNumberToAlphabet("53342")); // ACCBD
+      // console.log(convertNumberToAlphabet("22222")); // DDDDD
+      // console.log(convertNumberToAlphabet("51111")); // AEEEE
+
+      // // 38_不思議なタマゴ
+      // function getNumberOfSteps(s) {
+      //   // array = s.split(" ");
+      //   // return Math.max.apply(null, array);
+
+      //   // 安倍さんのやつ（スプレッド構文）
+      //   const resuts = s.split(" ");
+      //   return Math.max(...resuts);
+      // }
+
+      // console.log(getNumberOfSteps("1 2 5")); // 5
+      // console.log(getNumberOfSteps("2 5 5")); // 5
+      // console.log(getNumberOfSteps("1 2 1")); // 2
+
+      // // 39_台風の間隔
+      // function getInterval(s) {
+      //   array = s.split(" ");
+      //   console.log(array);
+      //   answer = [];
+      //   for (let i = 0; i < array.length - 1; i++) {
+      //     answer.push(array[i + 1] - array[i]);
+      //   }
+      //   return answer.join(" ");
+      // }
+
+      // console.log(getInterval("5 8 19 25 31")); // 3 11 6 6
+      // console.log(getInterval("2 3 7 9 28")); // 1 4 2 19
+
+      // // 40_◯◯の秋
+      // function getAutumn(s) {
+      //   return s.replaceAll("noaki", "");
+      // }
+
+      // console.log(getAutumn("codenoaki")); // code
+      // console.log(getAutumn("dokusyo")); // dokusyo
+      // console.log(getAutumn("javascriptnoaki")); // javascript
+
+      // 41_お月見だんご
+      // function getNumberOfDango(s) {
+      //   array = s.split(" ");
+      //   num = array.map(Number);
+      //   answer = [];
+      //   for (let i = 0; i < num.length; i++) {
+      //     if (num[i] <= 5) {
+      //       answer.push(num[i]);
+      //     } else if (5 < num[i]) {
+      //       answer.push(5);
+      //     }
+      //   }
+      //   return answer[0] + answer[1];
+      // }
+
+      // console.log(getNumberOfDango("3 50")); // 8
+      // console.log(getNumberOfDango("100 500")); // 10
+      // console.log(getNumberOfDango("2 4")); // 6
+
+      // // 42_衣替え
+      // function isReadyForSummer(s) {
+      //   array = s.split(" ");
+      //   let summer = array.filter((el) => el === "S");
+      //   if (summer.length <= 4) {
+      //     return "NG";
+      //   } else if (5 <= summer.length) {
+      //     return "OK";
+      //   }
+      // }
+
+      // console.log(isReadyForSummer("W W W W W S S S S S")); // OK
+      // console.log(isReadyForSummer("S S W W S W W W W W")); // NG
+      // console.log(isReadyForSummer("W S S S S S S S S W")); // OK
+
+      // 43_ピラミッドの段数(「21_nまでの和」と同じ)
+      // function getNumberOfHuman(n) {
+      //   let add = 0;
+      //   for (let i = 0; i <= n; i++) {
+      //     add += i;
+      //   }
+      //   return add;
+      // }
+
+      // console.log(getNumberOfHuman(4)); // 10
+      // console.log(getNumberOfHuman(10)); // 55
+      // console.log(getNumberOfHuman(50)); // 1275
+
+      // 44_トリック・オア・トリート
+      // function candyOrChocolate(s) {
+      //   if (s == "chocolate" || s == "candy") {
+      //     return "Thanks!";
+      //   } else {
+      //     return "No!";
+      //   }
+      // }
+
+      // console.log(candyOrChocolate("chocolate")); // Thanks!
+      // console.log(candyOrChocolate("candy")); // Thanks!
+      // console.log(candyOrChocolate("pannacotta")); // No!
+
+      // 45_11/11
+      // function canParty(s) {
+      //   if (s.length < 11) {
+      //     return 11 - s.length;
+      //   } else if (11 <= s.length) {
+      //     return "OK";
+      //   }
+      // }
+
+      // 46_ワインのキャッチコピー
+      // function bestCopy(s) {
+      //   return `Best in ${s}`;
+      // }
+
+      // console.log(bestCopy("a decade")); // Best in a decade
+      // console.log(bestCopy("the world")); // Best in the world
+      // console.log(bestCopy("history ever")); // Best in history ever
+
+      // console.log(canParty("11111111111")); // OK
+      // console.log(canParty("1111")); // 7
+      // console.log(canParty("1111111111111111")); // OK
+
+      // // 47_ガチャ期待値計算
+      // function probabilityGetSSR(n, t) {
+      //   return Math.round((1 - (1 - n / 100) ** t) * 100);
+      // }
+
+      // console.log(probabilityGetSSR(1, 100)); // 63
+      // console.log(probabilityGetSSR(1.5, 70)); // 65
+      // console.log(probabilityGetSSR(1, 200)); // 87
+
+      // // 48_調理計画(自力で解けなかったので、若松さんに教えてもらった)
+      // // day.jsを使用 年月日は適当に設定 HHは24時間表示 hhはAMPM表示
+      // function getStartTimeForCook(s, t) {
+      //   const a = "2019-01-10 " + s;
+      //   const b = dayjs(a).add(-t, "m");
+      //   const c = b.format("HH:mm");
+      //   return c;
+      // }
+
+      // console.log(getStartTimeForCook("19:00", 90)); // 17:30
+      // console.log(getStartTimeForCook("20:00", 20)); // 19:40
+      // console.log(getStartTimeForCook("20:30", 80)); // 19:10
+
+      // // 49_しかたないから全角にしてやるか
+      // function convertToUppercase(s) {
+      //   return s.replace(/[A-Za-z0-9]/g, (t) => {
+      //     return String.fromCharCode(t.charCodeAt(0) + 0xfee0);
+      //   });
+      // }
+
+      // console.log(convertToUppercase("1234567")); // １２３４５６７
+      // console.log(convertToUppercase("1111111")); // １１１１１１１
+      // console.log(convertToUppercase("1145140")); // １１４５１４０
+
+      // // 50_リストラ計画
+      // function fireEmployees(employees, fireEmployees) {
+      //   e_array = employees.split(" ");
+      //   f_array = fireEmployees.split(" ");
+      //   for (let i = 0; i < e_array.length; i++) {
+      //     for (let j = 0; j < f_array.length; j++) {
+      //       if (e_array[i] == f_array[j]) {
+      //         e_array.splice(i, 1);
+      //       }
+      //     }
+      //   }
+      //   return e_array.join(" ");
+      // }
+
+      // console.log(
+      //   fireEmployees(
+      //     "Jotaro Joseph Avdol Polnareff Tenmei Iggy",
+      //     "Avdol Tenmei Iggy"
+      //   )
+      // ); // Jotaro Joseph Polnareff
+      // console.log(
+      //   fireEmployees(
+      //     "Giorno Bucciarati Abbacchio Mista Narancia Fugo Trish",
+      //     "Bucciarati Abbacchio Narancia"
+      //   )
+      // ); // Giorno Mista Fugo Trish
+      // console.log(
+      //   fireEmployees(
+      //     "Jolyne Ermes Emporio F・F Weather Anasui",
+      //     "Jolyne Ermes F・F Weather Anasui"
+      //   )
+      // ); // Emporio
+
+      // // 51_プロフィールの表示
+      // function outputProfile(obj) {
+      //   let mf = "";
+      //   if (obj["gender"] == "male") {
+      //     mf = "彼";
+      //   } else if (obj["gender"] == "female") {
+      //     mf = "彼女";
+      //   }
+
+      //   if (
+      //     obj["name"] == undefined ||
+      //     obj["age"] == undefined ||
+      //     obj["gender"] == undefined
+      //   ) {
+      //     return "情報がありません";
+      //   } else {
+      //     return `${mf}の名前は${obj["name"]}で${obj["age"]}歳です`;
+      //   }
+      // }
+
+      // const taro = {
+      //   name: "Taro",
+      //   age: 25,
+      //   gender: "male",
+      // };
+
+      // console.log(outputProfile(taro)); //彼の名前はTaroで25歳です
+
+      // const hanako = {
+      //   name: "Hanako",
+      //   age: 30,
+      //   gender: "female",
+      // };
+
+      // console.log(outputProfile(hanako)); // 彼女の名前はHanakoで30歳です
+
+      // const hatena = {
+      //   name: "hatena",
+      //   age: 20,
+      // };
+
+      // console.log(outputProfile(hatena)); //  情報がありません
+
+      // // 52_お買い物リスト
+      // function combineArray(a, b) {
+      //   return a.concat(b);
+      // }
+
+      // const abc = ["a", "b", "c"];
+      // const def = ["d", "e", "f"];
+
+      // console.log(combineArray(abc, def)); //["a", "b", "c", "d", "e", "f"]
+
+      // const gen = ["米", "トイレットペーパー", "ちゅーる", "酒"];
+      // const yui = ["洗剤", "肉", "ブロッコリー"];
+
+      // console.log(combineArray(gen, yui)); // ["米", "トイレットペーパー", "ちゅーる", "酒", "洗剤", "肉", "ブロッコリー"]
+
+      // 53_成績を晒す
+      function createBadScoreArray(a) {}
+
+      console.log(createBadScoreArray("15 8 9 100 26 1")); // 1 8 9 15 26 100
+      console.log(createBadScoreArray("50 15 89 5 61 2 44")); // 2 5 15 44 50 61 89
+
+      // // 56_ランダムに挨拶
+      // function randomGreet(a, b, c) {
+      //   return [a, b, c][Math.floor(Math.random() * 3)];
+      // }
+
+      // console.log(randomGreet("おはよう", "こんにちは", "こんばんは")); // おはようorこんにちはorこんばんは
+      // console.log(randomGreet("Hi!", "Hello!", "Bye!")); // Hi! or Hello! or Bye!
+    </script>
+  </body>
+</html>
