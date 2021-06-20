@@ -642,6 +642,17 @@
       //   return answer[0] + answer[1];
       // }
 
+      // はっしーのやつ
+      // function getNumberOfDango(s) {
+      //   const array = s.split(' ');
+      //   let count = 0;
+      //   array.forEach(e => {
+      //       let i = parseInt(e);
+      //       (i > 5) ? count += 5 : count += i;
+      //   })
+      //   return count;
+      // }
+
       // console.log(getNumberOfDango("3 50")); // 8
       // console.log(getNumberOfDango("100 500")); // 10
       // console.log(getNumberOfDango("2 4")); // 6
@@ -834,18 +845,829 @@
       // console.log(combineArray(gen, yui)); // ["米", "トイレットペーパー", "ちゅーる", "酒", "洗剤", "肉", "ブロッコリー"]
 
       // 53_成績を晒す
-      function createBadScoreArray(a) {}
+      // function createBadScoreArray(a) {
+      //   array = a.split(" ");
+      //   num = array.map(Number);
+      //   result = num.sort((prev, next) => prev - next);
+      //   return result.join(" ");
+      // }
 
-      console.log(createBadScoreArray("15 8 9 100 26 1")); // 1 8 9 15 26 100
-      console.log(createBadScoreArray("50 15 89 5 61 2 44")); // 2 5 15 44 50 61 89
+      // console.log(createBadScoreArray("15 8 9 100 26 1")); // 1 8 9 15 26 100
+      // console.log(createBadScoreArray("50 15 89 5 61 2 44")); // 2 5 15 44 50 61 89
 
-      // // 56_ランダムに挨拶
+      // 54_特定の文字列を含むか
+      // function containStrings(str1, str2) {
+      //   if (str1.includes(str2)) {
+      //     return "true";
+      //   } else {
+      //     return "false";
+      //   }
+      // }
+
+      // const a = "あけましておめでとうございます";
+      // const b = "おめでとう";
+
+      // console.log(containStrings(a, b)); // true
+
+      // const c = "Love the life you live. Live the life you love.";
+      // const d = "best";
+
+      // console.log(containStrings(c, d)); // false
+
+      // 55_アンケートデータの作成
+      // function createObject(a, b) {
+      //   return { name: a, age: b };
+      // }
+
+      // console.log(createObject("ichiro", 20)); // { name: "ichiro", age: 20, }
+      // console.log(createObject("momoko", 22)); // { name: "momoko", age: 22, }
+
+      // 56_ランダムに挨拶
       // function randomGreet(a, b, c) {
       //   return [a, b, c][Math.floor(Math.random() * 3)];
       // }
 
       // console.log(randomGreet("おはよう", "こんにちは", "こんばんは")); // おはようorこんにちはorこんばんは
       // console.log(randomGreet("Hi!", "Hello!", "Bye!")); // Hi! or Hello! or Bye!
+
+      // 57_オブジェクトの並び替え
+      // function sortObject(obj) {
+      //   new_obj = [];
+      //   obj.forEach(function (x) {
+      //     new_obj.push(x.id);
+      //   });
+      //   result = new_obj.sort((prev, next) => prev - next);
+      //   answer = [];
+      //   result.forEach((x) => {
+      //     obj.forEach((y) => {
+      //       if (x == y.id) {
+      //         answer.push(`${y.id}:${y.name}(${y.age})`);
+      //       }
+      //     });
+      //   });
+      //   return answer.join(",");
+      // }
+
+      // はっしーのやつ
+      // function sortObject(obj) {
+      //   obj.sort((a, b) => {
+      //     if (a.id < b.id) {
+      //       return -1;
+      //     } else {
+      //       return 1;
+      //     }
+      //   });
+
+      //   answer = [];
+      //   obj.forEach((x) => {
+      //     answer.push(`${x.id}:${x.name}(${x.age})`);
+      //   });
+      //   return answer.join(",");
+      // }
+
+      // const objectArray1 = [
+      //   {
+      //     id: 8,
+      //     name: "Emily",
+      //     age: 29,
+      //   },
+      //   {
+      //     id: 1,
+      //     name: "John",
+      //     age: 22,
+      //   },
+      //   {
+      //     id: 4,
+      //     name: "Bob",
+      //     age: 30,
+      //   },
+      // ];
+
+      // console.log(sortObject(objectArray1)); // 1:John(22),4:Bob(30),8:Emily(29)
+
+      // const objectArray2 = [
+      //   {
+      //     id: 10,
+      //     name: "taro",
+      //     age: 29,
+      //   },
+      //   {
+      //     id: 112,
+      //     name: "hanako",
+      //     age: 22,
+      //   },
+      //   {
+      //     id: 40,
+      //     name: "pochi",
+      //     age: 3,
+      //   },
+      // ];
+
+      // console.log(sortObject(objectArray2)); // 10:taro(29),40:pochi(3),112:hanako(22)
+
+      // 58_名前しかいらん
+      // function createNameArray(array) {
+      //   array.sort((a, b) => {
+      //     if (a.age < b.age) {
+      //       return -1;
+      //     } else {
+      //       return 1;
+      //     }
+      //   });
+
+      //   answer = [];
+      //   array.forEach((x) => {
+      //     answer.push(x.name);
+      //   });
+      //   return answer;
+      // }
+
+      // const objectArray3 = [
+      //   {
+      //     id: 8,
+      //     name: "Emily",
+      //     age: 29,
+      //   },
+      //   {
+      //     id: 1,
+      //     name: "John",
+      //     age: 22,
+      //   },
+      //   {
+      //     id: 4,
+      //     name: "Bob",
+      //     age: 30,
+      //   },
+      // ];
+
+      // console.log(createNameArray(objectArray3)); // ["John", "Emily", "Bob"]
+
+      // const objectArray4 = [
+      //   {
+      //     id: 10,
+      //     name: "taro",
+      //     age: 29,
+      //   },
+      //   {
+      //     id: 112,
+      //     name: "hanako",
+      //     age: 22,
+      //   },
+      //   {
+      //     id: 40,
+      //     name: "pochi",
+      //     age: 3,
+      //   },
+      // ];
+      // console.log(createNameArray(objectArray4)); // ["pochi", "hanako", "taro"]
+
+      // 59_メール一斉送信
+      // function filterUnder25Array(array) {
+      //   answer = [];
+      //   array.forEach((x) => {
+      //     if (x.age < 25) {
+      //       answer.push(x.id);
+      //     }
+      //   });
+      //   return answer;
+      // }
+
+      // const objectArray5 = [
+      //   {
+      //     id: 8,
+      //     name: "Emily",
+      //     age: 29,
+      //   },
+      //   {
+      //     id: 1,
+      //     name: "John",
+      //     age: 22,
+      //   },
+      //   {
+      //     id: 4,
+      //     name: "Bob",
+      //     age: 30,
+      //   },
+      // ];
+
+      // console.log(filterUnder25Array(objectArray5)); // [1]
+
+      // const objectArray6 = [
+      //   {
+      //     id: 10,
+      //     name: "taro",
+      //     age: 29,
+      //   },
+      //   {
+      //     id: 112,
+      //     name: "hanako",
+      //     age: 22,
+      //   },
+      //   {
+      //     id: 40,
+      //     name: "pochi",
+      //     age: 3,
+      //   },
+      // ];
+
+      // console.log(filterUnder25Array(objectArray6)); // [112, 40]
+
+      // 60_予算オーバー
+      // function canTakeThis(arr) {
+      //   total = 0;
+      //   arr.forEach((x) => {
+      //     total += x.price * x.count;
+      //   });
+
+      //   // if (total <= 114514) {
+      //   //   return "true";
+      //   // } else {
+      //   //   return "false";
+      //   // }
+
+      //   // はっしーのreturn
+      //   return total <= 114514 ? true : false;
+      // }
+
+      // const tarosCart = [
+      //   {
+      //     id: 8,
+      //     name: "Yoich",
+      //     price: 5800,
+      //     count: 2,
+      //   },
+      //   {
+      //     id: 1,
+      //     name: "Yamasaki30",
+      //     price: 3000000,
+      //     count: 1,
+      //   },
+      //   {
+      //     id: 4,
+      //     name: "Chita",
+      //     price: 3600,
+      //     count: 1,
+      //   },
+      // ];
+
+      // console.log(canTakeThis(tarosCart)); // false
+
+      // const hanakosCart = [
+      //   {
+      //     id: 10,
+      //     name: "ひまわり",
+      //     price: 280,
+      //     count: 3,
+      //   },
+      //   {
+      //     id: 112,
+      //     name: "かすみ草",
+      //     price: 220,
+      //     count: 2,
+      //   },
+      //   {
+      //     id: 40,
+      //     name: "ガーベラ",
+      //     price: 110,
+      //     count: 5,
+      //   },
+      // ];
+      // console.log(canTakeThis(hanakosCart)); // true
+
+      // 61_トランプ占い
+      // function divinationCheat(s) {
+      //   array = s.split(" ");
+      //   if (array[0] == "J" && array[1] == "J") {
+      //     array.splice(1, 1, "Q");
+      //   }
+      //   return array.join(" ");
+      // }
+
+      // はっしーのやつ
+      // function divinationCheat(s) {
+      //   let count = 0;
+      //   for (let i = 0; i < s.split(" ").length; i++) {
+      //     if (s.split(" ")[i] == "J") {
+      //       count++;
+      //     }
+      //   }
+      //   return (c = count == 2 ? "J Q" : s);
+      // }
+
+      // console.log(divinationCheat("K Q")); // K Q
+      // console.log(divinationCheat("J Q")); // J Q
+      // console.log(divinationCheat("J J")); // J Q
+
+      // 62_AボタンとBボタン
+      // function placeCount(s) {
+      //   return s.split(" ")[0] - s.split(" ")[1];
+      // }
+
+      // console.log(placeCount("3 4")); // -1
+      // console.log(placeCount("80 44")); // 36
+
+      // // 63_3倍返し？
+      // function deathWhiteDay(n) {
+      //   if (n > 0) {
+      //     return n * 3;
+      //   } else {
+      //     return 1;
+      //   }
+      // }
+
+      // はっしーのやつ
+      // function deathWhiteDay(n) {
+      //   return n == 0 ? 1 : n * 3;
+      // }
+
+      // console.log(deathWhiteDay(1)); // 3
+      // console.log(deathWhiteDay(99)); // 297
+      // console.log(deathWhiteDay(0)); // 1
+
+      // 64_Leet文字列
+      // function convertLeet(s) {
+      //   return s
+      //     .replace("A", 4)
+      //     .replace("E", 3)
+      //     .replace("G", 6)
+      //     .replace("I", 1)
+      //     .replace("O", 0)
+      //     .replace("S", 5)
+      //     .replace("Z", 2);
+      // }
+
+      // はっしーのやつ
+      // function convertLeet(s) {
+      //   const ans = [];
+      //   const obj = { A: 4, E: 3, G: 6, I: 1, O: 0, S: 5, Z: 2 };
+      //   for (let i = 0; i < s.split("").length; i++) {
+      //     if (obj[s.split("")[i]] == undefined) {
+      //       ans.push(s.split("")[i]);
+      //     } else {
+      //       ans.push(obj[s.split("")[i]]);
+      //     }
+      //   }
+      //   return ans.join("");
+      // }
+
+      // console.log(convertLeet("ALANTURING")); // 4L4NTUR1N6
+      // console.log(convertLeet("GSACADEMY")); // 654C4D3MY
+
+      // 65_完全数とほぼ完全数
+      // function isPerfectNumber(s) {
+      //   array = s.split(" ");
+      //   num = array.map(Number);
+      //   new_array = [];
+
+      //   for (let i = 0; i < num.length; i++) {
+      //     divisorTotal_i = 0;
+      //     for (let k = 1; k < num[i]; k++) {
+      //       if (num[i] % k == 0) {
+      //         divisorTotal_i += k;
+      //       }
+      //     }
+      //     new_array.push(divisorTotal_i);
+      //   }
+
+      //   answer = [];
+      //   for (let i = 0; i < num.length; i++) {
+      //     if (num[i] == new_array[i]) {
+      //       answer.push("perfect");
+      //     } else if (Math.abs(num[i] - new_array[i]) == 1) {
+      //       answer.push("nearly");
+      //     } else {
+      //       answer.push("neither");
+      //     }
+      //   }
+      //   return answer.join(" ");
+
+      //   // ここから下は使わなかった
+      //   // 約数を一つの配列にして別の配列にセット
+      //   // for (let i = 0; i < num.length; i++) {
+      //   //   abc = i;
+      //   //   divisor_abc = [];
+      //   //   for (let k = 1; k < num[i]; k++) {
+      //   //     if (num[i] % k == 0) {
+      //   //       divisor_abc.push(k);
+      //   //     }
+      //   //   }
+      //   //   new_array.push(divisor_abc);
+      //   // }
+      //   // console.log(num);
+      //   // console.log(new_array);
+
+      //   // 配列のインデックス番号を取得
+      //   // index = [];
+
+      //   // for (let i = 0; i < num.length; i++) {
+      //   //   for (let k = 0; k < new_array.length; k++) {
+      //   //     if (num[i] == new_array[k]) {
+      //   //       index.push(new_array.indexOf(new_array[k]));
+      //   //     }
+      //   //   }
+      //   // }
+      //   // // console.log(index);
+
+      //   // for (let i = 0; i < index.length; i++) {
+      //   //   if (index[i] == index[i + 1]) {
+      //   //     index.splice(i, 1);
+      //   //   }
+      //   // }
+      //   // console.log(index);
+      // }
+
+      // console.log(isPerfectNumber("28 16 777")); // perfect nearly neither
+      // console.log(isPerfectNumber("3 4 5 6")); // neither nearly neither perfect
+
+      // // 66_単語テストの採点
+      // function calculatePoint(s) {
+      //   array = s.split(",");
+      //   newArray = [];
+      //   array.forEach((x) => {
+      //     newArray.push(x.split(" "));
+      //   });
+      //   // console.log(newArray);
+
+      //   oneStr = [];
+      //   newArray.forEach((x) => {
+      //     str0 = x[0].split("");
+      //     str1 = x[1].split("");
+      //     oneStr.push([str0, str1]);
+      //   });
+      //   // console.log(oneStr);
+
+      //   unmatch = [];
+
+      //   // ここはforEachでうまく挙動させられなかったので、ここだけfor文 統一したいのに。。。
+      //   for (let i = 0; i < oneStr.length; i++) {
+      //     let count = 0;
+      //     for (let k = 0; k < oneStr[i][0].length; k++) {
+      //       if (oneStr[i][0].length != oneStr[i][1].length) {
+      //         count = 2;
+      //       } else if (oneStr[i][0][k] != oneStr[i][1][k]) {
+      //         count++;
+      //       }
+      //     }
+      //     unmatch.push(count);
+      //   }
+      //   // console.log(unmatch);
+
+      //   totalScore = 0;
+      //   unmatch.forEach((x) => {
+      //     if (x == 0) {
+      //       totalScore += 2;
+      //     } else if (x == 1) {
+      //       totalScore++;
+      //     }
+      //   });
+
+      //   return totalScore;
+      // }
+
+      // はっしーのやつ
+      // function calculatePoint(s) {
+      //     S = s.split(",");
+      //     let point = 0;
+      //     for (let i = 0; i < S.length; i++) {
+      //         let count = 0;
+      //         for (let e = 0; e < S[i].length; e++) {
+      //             if (S[i].split(" ")[0].split("")[e] == S[i].split(" ")[1].split("")[e]) {
+      //             } else {
+      //                 count++;
+      //             }
+      //         }
+      //         if (count == 0) {
+      //             point += 2
+      //         } else if (count == 1) {
+      //             point++;
+      //         } else {}
+      //         }
+      //     return point;
+      // }
+
+      // console.log(
+      //   calculatePoint("apple aple,orange olange,grape glepe,lemon lemon")
+      // ); // 3
+      // console.log(
+      //   calculatePoint(
+      //     "january januarry,february febrary,march march,april aplil,may may,june june,july jury,august ougust,september septenber,october october,november novembar,december dicembar"
+      //   )
+      // ); // 13
+
+      // 67_先生の宿題
+      // function getAnswer(s) {
+      //   array = s.split(" ");
+      //   if(array[4]=="x"){
+      //     return array[1] == "+" ? parseInt(array[0])  + parseInt(array[2]) : parseInt(array[0]) - parseInt(array[2])
+      //   }else if(array[0]=="x"){
+      //     return array[1] == "+" ? parseInt(array[4])  - parseInt(array[2]) : parseInt(array[4]) + parseInt(array[2])
+      //   }else if(array[2]=="x"){
+      //     return array[1] == "+" ? parseInt(array[4])  - parseInt(array[0]) : parseInt(array[0]) - parseInt(array[4])
+      //   }
+      // }
+
+      // console.log(getAnswer("1 + 3 = x")); // 4
+      // console.log(getAnswer("6 - x = 3")); // 3
+      // console.log(getAnswer("x - 1 = 5")); // 6
+
+      // 68_アニメの日時
+      // function formatHour(s) {
+      //   array = s.split(" ");
+      //   date = array[0].split("/");
+      //   time = array[1].split(":");
+
+      //   add_day = Math.floor(parseInt(time[0]) / 24);
+      //   hour = parseInt(time[0]) % 24;
+
+      //   return (
+      //     date[0] +
+      //     "/" +
+      //     ("00" + String(parseInt(date[1]) + add_day)).slice(-2) +
+      //     " " +
+      //     ("00" + String(hour)).slice(-2) +
+      //     ":" +
+      //     time[1]
+      //   );
+      // }
+
+      // console.log(formatHour("01/27 24:30")); // 01/28 00:30
+      // console.log(formatHour("02/31 73:59")); // 02/34 01:59
+      // console.log(formatHour("12/31 00:00")); // 12/31 00:00
+      // console.log(formatHour("12/31 25:01")); // 12/32 01:01
+
+      // // 69_コーヒー割引キャンペーン
+      // // 自分で作ったやつ（for文のところが汎用性のない書き方 無念）
+      // function getCostForFreeCoffee(s) {
+      //   array = s.split(" ");
+      //   price = Number(array[0]);
+      //   discountRate = Number(array[1] / 100);
+
+      //   newArray = [price];
+      //   for (let i = 1; i <= 100; i++) {
+      //     if (price > 1) {
+      //       price = Math.floor(price * (1 - discountRate));
+      //       newArray.push(price);
+      //     }
+      //   }
+
+      //   answer = 0;
+      //   newArray.forEach((x) => {
+      //     answer += x;
+      //   });
+      //   return answer;
+      // }
+
+      // // 若松さんのやつ（for文ってこんな書き方できるのか！勉強になりました）
+      // function getCostForFreeCoffee(a) {
+      //   S = a.split(" ");
+      //   const coffee = Number(S[0]);
+      //   const off = 1 - S[1] / 100;
+      //   let all = 0;
+
+      //   for (price = coffee; price > 0; ) {
+      //     price = Math.floor(price * off);
+      //     // console.log(price);
+      //     all += price;
+      //   }
+      //   return all + coffee;
+      // }
+
+      // console.log(getCostForFreeCoffee("300 50")); // 596
+      // console.log(getCostForFreeCoffee("1000 99")); // 1010
+
+      // 70_エレベーター
+      // function getElevatorMove(s) {
+      //   array = s.split(" ");
+      //   num = array.map(Number);
+      //   floor = 1;
+      //   count = [];
+
+      //   num.forEach((x) => {
+      //     count.push(Math.abs(floor - x));
+      //     floor = x;
+      //   });
+
+      //   answer = 0;
+      //   count.forEach((x) => {
+      //     answer += x;
+      //   });
+      //   return answer;
+      // }
+
+      // console.log(getElevatorMove("3 1 4")); // 7
+      // console.log(getElevatorMove("17 28 11 62 64 4 7 17")); // 170
+
+      // 71_ゾロ目の日付
+      // function isSingleNumber(s) {
+      //   str = s.replaceAll(" ", "");
+      //   array = str.split("");
+      //   answer = array.map(Number);
+      //   count = 0;
+
+      //   for (let i = 0; i < answer.length; i++) {
+      //     if (answer[i] != answer[i + 1]) {
+      //       count++;
+      //     }
+      //   }
+
+      //   return count == 1 ? "Yes" : "No";
+      // }
+
+      // 若松さんのやつ
+      // function isSingleNumber(s) {
+      //   S = s.split(" ");
+      //   const tuki = S[0].split("");
+      //   const niti = S[1].split("");
+      //   let allnumber = tuki.concat(niti);
+      //   console.log(allnumber);
+      //   // 判定
+      //   if (allnumber.every((v) => v === allnumber[0])) {
+      //     return "Yes";
+      //   }
+      //   return "No";
+      // }
+
+      // console.log(isSingleNumber("11 1")); // Yes
+      // console.log(isSingleNumber("11 11")); // Yes
+      // console.log(isSingleNumber("12 11")); //  No
+
+      // 72_花見の準備
+      // function judgeCheapSheet(s) {
+      //   arr = s.split(",");
+      //   array = [arr[0].split(" "), arr[1].split(" ")];
+      //   price_1 =
+      //     (parseInt(array[0][0]) * parseInt(array[0][1])) /
+      //     parseInt(array[0][2]);
+      //   price_2 =
+      //     (parseInt(array[1][0]) * parseInt(array[1][1])) /
+      //     parseInt(array[1][2]);
+
+      //   console.log(price_1);
+      //   console.log(price_2);
+
+      //   if (price_1 < price_2) {
+      //     return array[0].join(" ");
+      //   } else if (price_1 > price_2) {
+      //     return array[1].join(" ");
+      //   } else {
+      //     return "DRAW";
+      //   }
+      // }
+      // console.log(judgeCheapSheet("5 18 1000,12 21 3000")); // 5 18 1000 ← たぶん間違い 正しいのは 12 21 3000
+      // console.log(judgeCheapSheet("5 5 1800,5 10 3600")); // DRAW
+
+      // // 73_下一桁はいくつ
+      // function getLastNumber(s) {
+      //   array = s.split(" ");
+      //   num = array.map(Number);
+      //   sum = num.reduce((a, x) => a + x, 0);
+      //   console.log(sum);
+      //   str = String(sum);
+      //   answer = str.split("");
+      //   return answer[answer.length - 1];
+      // }
+
+      // 若松さんのやつ
+      // function getLastNumber(s) {
+      //   S = s.split(" ");
+      //   let num73 = S.map(Number);
+      //   const sum = num73.reduce((prev, current) => prev + current, 10);
+      //   const ans73 = String(sum).substr(-1, 1);
+      //   return ans73;
+      // }
+
+      // console.log(getLastNumber("1 9 8 9 12")); // 9
+      // console.log(getLastNumber("1 1 1 1 6")); // 0
+      // console.log(getLastNumber("1 1 1 1 1")); // 5
+
+      // // 74_角松の作成
+      // function getAllLength(n) {
+      //   second = (n * 5) / 3;
+      //   max = (n * 7) / 3;
+      //   return n + second + max;
+      //   console.log(second);
+      // }
+
+      // console.log(getAllLength(60)); // 300
+      // console.log(getAllLength(9)); // 45
+
+      // 75_禁止ワード
+      // function hasNgWord(s) {
+      //   array = s.split(" ");
+      //   if (array[1].includes(array[0])) {
+      //     return "NG";
+      //   } else {
+      //     return array[1];
+      //   }
+      // }
+
+      // console.log(hasNgWord("ngword thisisngword")); // NG
+      // console.log(hasNgWord("ngword gsprogramming")); // gsprogramming
+
+      // // 76_洗濯物と砂ぼこり
+      // function canDry(s) {
+      //   array = s.split(" ");
+      //   num = array.map(Number);
+      //   if (array[0] >= 25 && array[1] <= 40) {
+      //     return "No";
+      //   } else if (array[0] >= 25 || array[1] <= 40) {
+      //     return "Yes";
+      //   } else {
+      //     return "No";
+      //   }
+      // }
+
+      // 若松さんのやつ
+      // function canDry(s) {
+      //   S = s.split(" ");
+      //   const kion = S[0];
+      //   const situ = S[1];
+      //   if ((kion >= 25 && situ <= 40) || (kion < 25 && situ > 40)) {
+      //     return "No";
+      //   } else {
+      //     return "Yes";
+      //   }
+      // }
+
+      // console.log(canDry("25 50")); // Yes
+      // console.log(canDry("10 20")); // Yes
+      // console.log(canDry("20 50")); // No
+
+      // // 77_カードならべ
+      // function getBestScore(s) {
+      //   array = s.split(" ");
+      //   num = array.map(Number);
+      //   sortArray = num.sort((prev, next) => prev - next);
+      //   str = sortArray.map(String);
+      //   answer = [str[3] + str[1], str[2] + str[0]];
+      //   numAnswer = answer.map(Number);
+      //   return numAnswer[0] + numAnswer[1];
+      // }
+
+      // console.log(getBestScore("2 9 3 8")); // 175
+      // console.log(getBestScore("7 8 7 7")); // 164
+
+      // 78_ログのフィルター
+      // function filterLogByKeyword(s) {
+      //   array = s.split(",");
+      //   logArray = array[1].split(" ");
+      //   answer = [];
+      //   logArray.forEach((x) => {
+      //     if (x.includes(array[0])) {
+      //       answer.push(x);
+      //     }
+      //   });
+      //   return !answer.length ? "None" : answer.join(" ");
+      // }
+
+      // console.log(
+      //   filterLogByKeyword(
+      //     "gs,gsacademytokyo javascript gsacademyfukuoka gsbase"
+      //   )
+      // ); // gsacademytokyo gsacademyfukuoka gsbase
+      // console.log(
+      //   filterLogByKeyword("script,javascript typescript googleappscript java")
+      // ); // javascript typescript googleappscript
+      // console.log(
+      //   filterLogByKeyword(
+      //     "dio,Giorno Bucciarati Abbacchio Mista Narancia Fugo Trish"
+      //   )
+      // ); // None
+
+      // 79_メールアドレス認証
+      // function isValidEmail(s) {
+      //   regexp = new RegExp(
+      //     /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9_.-]+\.+[a-zA-Z0-9_.-]+$/
+      //   );
+      //   return regexp.test(s);
+      // }
+
+      // console.log(isValidEmail("ccc@aaa.com")); // true
+      // console.log(isValidEmail("c@cc@aaa.com")); // false
+      // console.log(isValidEmail("cc c@aaa.com")); // false
+      // console.log(isValidEmail("cc.c@aaacom")); // false
+      // console.log(isValidEmail("cc.c@aaa.com")); // true
+      // console.log(isValidEmail("@aaa.com")); // false
+
+      // 80_フィボナッチ数列
+      // function getFibonacciNth(n) {
+      //   array = [BigInt(0), BigInt(1)];
+
+      //   if (n >= 2) {
+      //     for (let i = 2; i < n; i++) {
+      //       array.push(BigInt(array[i - 2]) + BigInt(array[i - 1]));
+      //     }
+      //   }
+
+      //   return n == 0 || n == 1
+      //     ? BigInt(1)
+      //     : BigInt(array[array.length - 2]) + BigInt(array[array.length - 1]);
+      // }
+
+      // console.log(getFibonacciNth(1)); // 1
+      // console.log(getFibonacciNth(5)); // 5
+      // console.log(getFibonacciNth(10)); // 55
+      // console.log(getFibonacciNth(90)); // 2880067194370816120
     </script>
   </body>
 </html>
